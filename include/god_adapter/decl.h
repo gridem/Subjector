@@ -37,7 +37,7 @@
     template <typename... V>                                                             \
     auto D_name(V&&... v)                                                                \
     {                                                                                    \
-        return this->call(                                                               \
+        return T_base::call(                                                             \
             [](auto& t, auto&&... x) {                                                   \
                 return t.D_name(std::forward<decltype(x)>(x)...);                        \
             },                                                                           \
